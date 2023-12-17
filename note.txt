@@ -36,3 +36,42 @@
 - 리퀘스트 종료 const handleHome = (req, res) => {
   return res.end(); //*request 종료. request가 왔으면 response를 return해줘야함.
 }
+
+ㅁ미들웨어
+  const gossipMiddleware = (req, res, next) => {
+    console.log("I'm in middle!!") 
+    next(); //*완료가 되고 난 후에 handleHome을 진행
+  };
+
+  const handleHome = (req, res) => {
+    return res.end(); 
+  };
+
+  app.get("/", gossipMiddleware, handleHome);
+
+  - handleHome은 finalware
+  - 만약 next()전에 return을 쓰게 되면 미들웨어 기능을 못함. *next()전에 끝나기 때문
+
+
+ㅁ라우터
+ - 컨트롤러와 URL 관리를 도와줌 -> 미니어플리케이션 만듬
+ - 이번 플젝의 도메인은 유저/도메인 두개
+   -> 라우터는 도메인을 기반으로 URL을 그룹화 해줌
+ 
+ (글로벌 라우터)
+ *이론상 users/join 등이 맞지만, 조인로그인 등은 별도로 제작하는 걸 선호
+ /join
+ /login
+ /search
+
+ (유터라우터/비디오 라오터)
+ /edit-users -> Edit user
+  =users/edit
+ /delete-users -> Delete user
+  =users/delete
+ /watch-video -> Watch video
+  =vidoe/watch
+ /edit-video -> Edit video
+  =video/edit
+ /delete-vidoe -> Delete video
+  =video/delete
