@@ -14,7 +14,7 @@
     * dependencies : 프로젝트 니즈, 필수적
     * devDependencies: 사람 니즈. 보조적(babel.js 등)
   -노디몬 설치 
-    -> 파일 수정을 체크해 줌
+    -> 파일 수정을 자동으로 체크해 줌
     -> npm i nodemon --save-dev
     ->스크립트  "dev": "nodemon --exec babel-node index.js"
 
@@ -22,8 +22,8 @@
 - import express from "express";
   const app = express()  <-- 이걸 듣게해야함
 - (서버)는 무엇을 들어야 하는가?
- -서버는 항상 켜져 있는 인터넷에 연결된 컴퓨터이다
- - 서버는 항시 request를 듣는다 == listening
+ ->서버는 항상 켜져 있는 인터넷에 연결된 컴퓨터이다
+ ->서버는 항시 request를 듣는다 == listening
   0. const app = express();  
   1. 서버에게 어떤 port를 listening 할지 설정
   2. callback 작성
@@ -75,3 +75,16 @@
   =video/edit
  /delete-vidoe -> Delete video
   =video/delete
+
+ㅁ인라인 펑션
+ -app.get("/". () => console.log("hello"));
+
+ㅁmorgan
+ 1. logger라는 미들웨어를 morgan("dev")로 생성
+ - const logger = morgan("dev");
+ - app.use(logger); //morgan함수는 미들웨어를 리턴줌
+ 2. dev,combined 등 원하는 정보를 얻을 수 있음
+
+ ㅁ 미들웨어 
+  1. 미들웨어 종료 
+     return res.end(); //*request 종료. request가 왔으면 response를 return해줘야함.
