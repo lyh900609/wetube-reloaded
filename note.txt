@@ -85,6 +85,24 @@
  - app.use(logger); //morgan함수는 미들웨어를 리턴줌
  2. dev,combined 등 원하는 정보를 얻을 수 있음
 
- ㅁ 미들웨어 
-  1. 미들웨어 종료 
-     return res.end(); //*request 종료. request가 왔으면 response를 return해줘야함.
+ㅁ 미들웨어 
+1. 미들웨어 종료 
+    return res.end(); //*request 종료. request가 왔으면 response를 return해줘야함.
+
+ㅁ파라미터
+- /:id
+- url 안에 변수를 만듦
+
+ㅁpug사용법
+- Express의 pug를 사용해서 html리턴 방법
+- pug 파일은 부모자식간에 한칸씩 차이가 있어야함
+- 서버.js에 app.set("view engine", "pug");로 세텡
+- res.render("퍼그파일명")
+- 다만, cwd(커런트워킹다이렉토리)가 제이슨 기준이라 변경해야함
+ ->app.set("views", process.cwd()+"/src/views") 
+
+ㅁpug의 partials 기능
+ - 일부 코드를 하나로 설정해둠
+ - 따로 pug로 저장
+ - 원하는 pug파일에 include 루트/루트
+ㅁpug에서 JS사용방법

@@ -1,0 +1,16 @@
+/ ->home
+/join -> join
+/login -> login
+/search -> Search
+
+/users/:id -> See User (자신의 계정만 볼수 있어야함)
+/users/logout -> Log out
+/users/edit -> Edit MY Profile (유저 로그인 상태만 접속 가능)
+/users/remove -> Delete My Profile (유저 로그인 상태만 접속 가능)
+
+/videos/:id -> See Video
+/videos/:id/edit -> Edit Video
+/videos/:id/delete -> Delete Video
+/videos/upload -> Upload Video
+
+

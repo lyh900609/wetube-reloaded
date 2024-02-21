@@ -18,15 +18,16 @@ const handleProtected = (req, res) => {
 }
 
 const logger = morgan("dev");
-
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
 app.use(logger); //morgan함수는 미들웨어를 리턴줌
 app.get("/", handleHome);
 app.get("/protected", handleProtected);
  //*누군가 root 페이지로 get request를 보냄
 
- app.use("/", globalRouter);
- app.use("/videos", videoRouter);
- app.use("/user", userRouter);
+app.use("/", globalRouter);
+app.use("/videos", videoRouter);
+app.use("/user", userRouter);
 
 const handleListening = () => console.log(`Server listening on port http://localhost:${PORT}`)
 
