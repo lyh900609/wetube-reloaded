@@ -1,7 +1,7 @@
 ㅁpackage.json 설정
   - 기본설정: npm init
   - scripts 설정후 -> 터미널에서 npm run "설정한 명령어"
-   -> 서버시작, css 압축, 웹사이트에 빌듼
+   -> 서버시작, css 압축, 웹사이트에 빌드
   - express설치: npm i express 
   - babel.js설치: 최신 js를 노드가 이해할 수 있게 변환
     "devDependencies": {

@@ -1,4 +1,4 @@
-export const see = (req, res) => res.render("watch");
+export const see = (req, res) =>res.render("watch");
 export const edit = (req, res) => res.render("edit");
 export const deleteVidoe = (req, res) => {
     console.log(req.params);
